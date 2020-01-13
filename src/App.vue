@@ -1,14 +1,37 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <!-- <router-view/> -->
+    <div class="componentWrapper">
+      <hello></hello>
+      <menuList v-bind:menu="menuList"></menuList>
+    </div>
+    <formArea></formArea>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import Nihao from './components/Hello';
+  import menuList from './components/Menu';
+  import formArea from './components/formArea';
+
+  export default {
+    name: 'app',
+    components: { 
+      hello: Nihao,
+      menuList,
+      formArea,
+    },
+    data() {
+      return {
+        menuList: [
+          {id: 1, name: 'Dashboard'},
+          {id: 2, name: 'Notification'},
+          {id: 3, name: 'Universe'},
+          {id: 4, name: 'Setting'},
+        ]
+      }
+    }
+  }
 </script>
 
 <style>
@@ -16,8 +39,10 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.componentWrapper {
+  display: flex;
+  justify-content: space-around;
 }
 </style>
