@@ -1,7 +1,7 @@
 <template>
   <div id="menuContainer">
       <ul>
-          <li v-for="item in menu" v-bind:key="item.id">
+          <li v-for="item in menu" v-bind:key="item.id" v-bind:style="styleObject">
               {{item.name}}
           </li>
       </ul>
@@ -13,7 +13,9 @@ export default {
     props: ['menu'],
     data() {
         return {
-            
+            styleObject: {
+                listStyle: 'none'
+            }
         }
     }
 }

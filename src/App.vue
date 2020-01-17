@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <!-- <router-view/> -->
-    <div class="componentWrapper">
+    <div id="componentWrapper" class="d-flex justify-content-start">
       <hello></hello>
       <menuList v-bind:menu="menuList"></menuList>
     </div>
@@ -40,9 +40,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-}
-.componentWrapper {
-  display: flex;
-  justify-content: space-around;
 }
 </style>
